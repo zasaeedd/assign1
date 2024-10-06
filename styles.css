@@ -1,0 +1,40 @@
+.title {
+    text-align:center;
+    position:relative;
+    background-color:green;
+    height: 10vh;
+    margin: -8px;
+    padding: 20px;
+}
+
+#headerTitle:hover {
+    top:0px;
+    color:gold;
+    transition-duration: 0.5s;
+    font-size: 40px;
+}
+
+#headerTitle:not(hover) {
+    position: relative;
+    top:20px;
+    color:white;
+    transition-duration: 0.5s;
+    font-size: 25px;
+}
+
+@media (max-width:500px) {
+    #headerTitle:hover {
+        top:20px;
+        color:gold;
+        transition-duration: 0.5s;
+        font-size: 25px;
+    }
+    
+    #headerTitle:not(hover) {
+        position: relative;
+        top:25px;
+        color:white;
+        transition-duration: 0.5s;
+        font-size: 20px;
+    }
+}
