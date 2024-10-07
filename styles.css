@@ -1,42 +1,200 @@
-.title {
-    text-align:center;
-    position:relative;
-    background-color:green;
-    height: 10vh;
-    margin: -8px;
+/* General styling for body and layout */
+body {
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    background: rgba(247, 247, 247, 0.644);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     padding: 20px;
 }
 
-#headerTitle:hover {
-    position:relative;
-    top:-10px;
+/* Header and title styling */
+.topHeader {
+    display: flex;
+    justify-content: space-between; 
+    padding:10px 20px;
+    align-items: center;
+    background-color: green;
+    color: white;
+}
+
+.title {
+    text-align: center;
+    background-color: green;
+    padding:20px;
+    margin: 0px;
+}
+
+.welcomeMessage {
+    text-align: center;
+}
+
+.welcomeParagraph {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcomeParagraph p {
+    flex: 1;
+    margin: 10px;
+}
+
+.weeklySchedule {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#weeklyTitle {
+    display:grid;
+    flex-direction: row;
+    text-align: center;
+}
+
+.weeklySchedule div {
+    margin: 10px 0; /* Add vertical spacing between days */
+    text-align: center; /* Center the text within each day's section */
+}
+
+.weeklySchedule ul {
+    text-align: left;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+}
+
+.welcomeParagraph p:hover {
     color:gold;
-    transition-duration: 0.5s;
-    font-size: 40px;
+    transition-duration: 0.35s;
 }
 
-#headerTitle:not(hover) {
-    position: relative;
-    top:12.5px;
-    color:white;
+.welcomeParagraph p:not(:hover){
+    color:black;
+    transition-duration: 0.35s;
+}
+
+/* Title hover effect */
+#headerTitle:hover {
+    color: gold;
+    font-size: 35px;
     transition-duration: 0.5s;
+}
+
+#headerTitle:not(:hover) {
+    color: white;
     font-size: 25px;
+    transition-duration: 0.5s;
 }
 
-@media (max-width:500px) {
-    #headerTitle:hover {
-        position:relative;
-        top:8px;
-        color:gold;
-        transition-duration: 0.5s;
-        font-size: 25px;
+#welcome:hover {
+    color: gold;
+    font-size: 30px;
+    transition-duration: 0.5s;
+}
+
+#welcome:not(:hover) {
+    color: black;
+    font-size: 25px;
+    transition-duration: 0.5s;
+}
+
+#weeklyTitle:hover {
+    color: gold;
+    font-size: 30px;
+    transition-duration: 0.5s;
+}
+
+#weeklyTitle:not(:hover) {
+    color: black;
+    font-size: 25px;
+    transition-duration: 0.5s;
+}
+
+/* Navigation styling */
+nav {
+    display: flex;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+nav a:hover {
+    color: gold;
+    transition-duration: 0.35s;
+}
+
+/* Footer styling */
+footer {
+    position:sticky;
+    background-color: green;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    margin-top: auto;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 500px) {
+    main {
+        padding: 10px;
     }
-    
-    #headerTitle:not(hover) {
-        position: relative;
-        top:17.5px;
-        color:white;
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+    }
+
+    nav a {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    #headerTitle:hover {
+        font-size: 25px;
         transition-duration: 0.5s;
+    }
+
+    #headerTitle:not(:hover) {
         font-size: 20px;
+        transition-duration: 0.5s;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 10px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+    }
+
+    nav a {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .weeklySchedule {
+        display:grid;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
     }
 }
