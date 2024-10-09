@@ -6,7 +6,9 @@ body {
     flex-direction: column;
     margin: 0px;
     background: rgba(247, 247, 247, 0.644);
+    overflow-x: hidden;
 }
+
 
 main {
     flex: 1;
@@ -23,6 +25,9 @@ main {
     align-items: center;
     background-color: green;
     color: white;
+    width: 100%;
+
+    
 }
 
 .title {
@@ -132,6 +137,7 @@ main {
 /* Navigation styling */
 nav {
     display: flex;
+    padding: 50px;
 }
 
 nav a {
@@ -147,21 +153,22 @@ nav a:hover {
 
 .photoSection img {
     transition: transform 0.3s; /* Smooth zoom effect */
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .photoSection img:hover {
     transform: scale(1.05); /* Slightly enlarge the image on hover */
 }
 
-.photoGallery{
-    margin-top: 15px;
+
+.photoSection{
     display: flex;             /* Use flexbox for alignment */
     flex-wrap: wrap;          /* Allow images to wrap to the next line */
     justify-content: center;   /* Center images horizontally */
     align-items: center;      /* Center images vertically (if needed) */
     max-width: 100%;          /* Prevent the gallery from exceeding the viewport width */
-    margin-left: 10px;
-    margin-right: 10px;
+
 }
 
 #photosTitle{
@@ -223,7 +230,6 @@ details[open] summary::before {
 
 .info-section {
     margin-top: 20px;
-    padding: 15px;
     background-color: #f1f1f1; /* Light background for better readability */
     border-radius: 5px; /* Rounded corners */
 }
@@ -242,7 +248,7 @@ details[open] summary::before {
 /* Footer styling */
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 10px 20px;
     background-color: green;
     color: white;
     position: relative;
