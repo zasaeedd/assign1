@@ -1,46 +1,135 @@
-.title {
-  text-align: center;
-  background-color: green;
-  height: 10vh;
-  margin: 0px;
-  padding: 20px;
+/* General styling for body and layout */
+body {
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    background: rgba(247, 247, 247, 0.644);
 }
 
-#headerTitle:hover {
-  color: gold;
-  font-size: 40px;
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
 }
 
-#headerTitle:not(hover) {
-  position: relative;
-  color: white;
-  transition-duration: 0.5s; /**/
-  font-size: 25px;
-}
-
-@media (max-width:500px) {
-  #headerTitle:hover {
-      color:gold;
-      transition-duration: 0.5s;
-      font-size: 25px;
-  }
-  
-  #headerTitle:not(hover) {
-      color:white;
-      transition-duration: 0.5s;
-      font-size: 20px;
-  }
-}
-
-header {
+/* Header and title styling */
+.topHeader {
     display: flex;
     justify-content: space-between; 
-    align-items: center;            
-    padding: 10px 20px;
+    padding:10px 20px;
+    align-items: center;
     background-color: green;
     color: white;
 }
 
+.title {
+    text-align: center;
+    background-color: green;
+    padding:20px;
+    margin: 0px;
+}
+
+.welcomeMessage {
+    text-align: center;
+}
+
+.welcomeParagraph {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcomeParagraph p {
+    flex: 1;
+    margin: 10px;
+}
+
+.weeklySchedule {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#weeklyTitle {
+    display:grid;
+    flex-direction: row;
+    text-align: center;
+}
+
+.weeklySchedule div {
+    margin: 10px 0; /* Add vertical spacing between days */
+    text-align: center; /* Center the text within each day's section */
+}
+
+.weeklySchedule ul {
+    text-align: left;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+}
+
+.welcomeParagraph p:hover {
+    color:gold;
+    transition-duration: 0.35s;
+}
+
+.welcomeParagraph p:not(:hover){
+    color:black;
+    transition-duration: 0.35s;
+}
+
+.days ul:hover {
+    font-size: 12.25px;
+    color: gold;
+    transition-duration: 1s;
+}
+
+.days ul:not(:hover) {
+    transition-duration: 1s;
+}
+
+/* Title hover effect */
+#headerTitle:hover {
+    color: gold;
+    font-size: 35px;
+    transition-duration: 0.5s;
+}
+
+#headerTitle:not(:hover) {
+    color: white;
+    font-size: 25px;
+    transition-duration: 0.5s;
+}
+
+#welcome:hover {
+    color: gold;
+    font-size: 25.25px;
+    transition-duration: 0.5s;
+}
+
+#welcome:not(:hover) {
+    color: black;
+    font-size: 25px;
+    transition-duration: 0.5s;
+}
+
+#weeklyTitle:hover {
+    color: gold;
+    font-size: 25.25px;
+    transition-duration: 0.5s;
+}
+
+#weeklyTitle:not(:hover) {
+    color: black;
+    font-size: 25px;
+    transition-duration: 0.5s;
+}
+
+/* Navigation styling */
 nav {
     display: flex;
 }
@@ -53,44 +142,200 @@ nav a {
 
 nav a:hover {
     color: gold;
+    transition-duration: 0.35s;
 }
 
-body {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  /* overflow: hidden; */
+.photoSection img {
+    transition: transform 0.3s; /* Smooth zoom effect */
 }
 
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  padding: 20px;
+.photoSection img:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
 }
 
+.photoGallery{
+    margin-top: 15px;
+    display: flex;             /* Use flexbox for alignment */
+    flex-wrap: wrap;          /* Allow images to wrap to the next line */
+    justify-content: center;   /* Center images horizontally */
+    align-items: center;      /* Center images vertically (if needed) */
+    max-width: 100%;          /* Prevent the gallery from exceeding the viewport width */
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#photosTitle{
+    text-align: center;
+    color: black;
+    font-size: 25px;
+    transition-duration: 0.5s;
+}
+
+.photos {
+    align-items: center;
+    width: 50px;
+    height: 50px;
+}
+.announcements summary{
+    padding: 15px;
+    cursor: pointer;
+    position: relative; /* Position relative for ::before */
+    list-style: none;
+    background-color: #f1f1f1; /* Background color for the summary */
+}      
+
+.announcements summary::before {
+    content: '+'; /* Plus sign */
+    position: absolute; /* Position it inside the summary */
+    left: 0px; /* Adjust this value to position it */
+    font-size: 20px; /* Size of the plus sign */
+    color: #333; /* Color of the plus/minus sign */
+
+}
+
+details[open] summary::before {
+    content: '-'; /* Change to minus sign when open */
+}
+
+#announTitle {
+    text-align: center;
+    color: black;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.parents-section{
+    display: flex;
+    flex-direction: row;
+}
+
+.announcements{
+    flex: 3;
+    margin-right: 20px;
+}
+
+#infoTitle{
+    text-align: center;
+    color: black;
+    font-size: 25px;
+    transition-duration: 0.5s;
+}
+
+.info-section {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f1f1f1; /* Light background for better readability */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.info-section h3 {
+    color: darkgreen; /* Different color for section titles */
+}
+
+.info-section p {
+    margin: 5px 0; /* Spacing between paragraphs */
+}
+
+.teacherInfo{
+    flex:1;
+}
+/* Footer styling */
 footer {
-  background-color: green;
-  color: white;
-  text-align: center;
-  padding: 5px;
-  margin-top: auto;
+    text-align: center;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
+/* Media queries for responsive design */
 @media (max-width: 500px) {
-  main {
-    padding: 10px;                
-  }
+    main {
+        padding: 10px;
+    }
 
-  nav {
-      flex-direction: column;       
-      align-items: flex-start;     
-      padding: 10px 0;             
-  }
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+    }
 
-  nav a {
-    margin-left: 0;              
-    margin-bottom: 10px;          
-  }
+    nav a {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    #headerTitle:hover {
+        font-size: 25px;
+        transition-duration: 0.5s;
+    }
+
+    #headerTitle:not(:hover) {
+        font-size: 20px;
+        transition-duration: 0.5s;
+    }
+
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 10px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+    }
+
+    nav a {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    
+    
+}
+
+@media (max-width: 768px) {
+    .weeklySchedule {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .days {
+        width: 100%; /* Full width for each day */
+    }
+
+    .days ul {
+        font-size: 14px; /* Slightly larger font for better readability */
+    }
+
+    .welcomeParagraph {
+        flex-direction: column; /* Stack paragraphs on small screens */
+    }
+
+    .welcomeParagraph p {
+        margin: 10px 0; /* Vertical spacing between paragraphs */
+    }
+
+    nav {
+        flex-direction: column; /* Stack navigation items */
+        align-items: center; /* Center navigation items */
+    }
+
+    nav a {
+        margin: 5px 0; /* Spacing for vertical layout */
+    }
+    
+}
+
+@media (max-width: 1000px) {
+    .weeklySchedule {
+        display:grid;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+    }
 }
