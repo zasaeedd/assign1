@@ -134,6 +134,18 @@ main {
     transition-duration: 0.5s;
 }
 
+#photosTitle:hover {
+    color: gold;
+    font-size: 25.25px;
+    transition-duration: 0.5s;
+}
+
+#photosTitle:not(:hover) {
+    color: black;
+    font-size: 25px;
+    transition-duration: 0.5s;
+}
+
 /* Navigation styling */
 nav {
     display: flex;
@@ -183,12 +195,15 @@ nav a:hover {
     width: 50px;
     height: 50px;
 }
-.announcements summary{
+
+/* Updated summary styling */
+.announcements summary {
     padding: 15px;
     cursor: pointer;
     position: relative; /* Position relative for ::before */
     list-style: none;
     background-color: #f1f1f1; /* Background color for the summary */
+    color: green; /* Change summary text color to green */
 }      
 
 .announcements summary::before {
@@ -196,12 +211,28 @@ nav a:hover {
     position: absolute; /* Position it inside the summary */
     left: 0px; /* Adjust this value to position it */
     font-size: 20px; /* Size of the plus sign */
-    color: #333; /* Color of the plus/minus sign */
-
+    color: darkgreen; /* Color of the plus/minus sign */
 }
 
 details[open] summary::before {
     content: '-'; /* Change to minus sign when open */
+}
+
+/* Ensure PHOTO GALLERY text is correctly placed */
+.photoGallery {
+    text-align: center; /* Center the PHOTO GALLERY title */
+}
+
+.photoSection {
+    display: flex;             /* Use flexbox for alignment */
+    flex-wrap: wrap;           /* Allow images to wrap to the next line */
+    justify-content: center;   /* Center images horizontally */
+    align-items: center;       /* Center images vertically (if needed) */
+    max-width: 100%;           /* Prevent the gallery from exceeding the viewport width */
+}
+
+.placeholders {
+    margin: 10px; /* Add some margin between images */
 }
 
 #announTitle {
@@ -230,6 +261,7 @@ details[open] summary::before {
 
 .info-section {
     margin-top: 20px;
+    padding:20px;
     background-color: #f1f1f1; /* Light background for better readability */
     border-radius: 5px; /* Rounded corners */
 }
@@ -300,7 +332,6 @@ footer {
         margin-left: 0;
         margin-bottom: 10px;
     }
-    
     
 }
 
